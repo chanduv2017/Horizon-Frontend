@@ -3,34 +3,34 @@ import { Avatar } from "./Avatar";
 
 
 interface BlogCardProps {
-  id: string;
-  authorName: string;
+  post_id: string;
+  User:  string ;
   title: string;
   content: string;
-  publishedDate: string;
+  CreatedAt: string;
 }
 
 export const BlogCard = ({
-  id,
-  authorName,
+  post_id,
+  User,
   title,
   content,
-  publishedDate,
+  CreatedAt,
 }: BlogCardProps) => {
   return (
-    <Link to={`/blog/${id}`}>
+    <Link to={`/blog/${post_id}`}>
       <div className="p-4 border-b border-slate-200 pb-4 w-screen max-w-screen-md cursor-pointer">
         <div className="flex ">
-          <Avatar name={authorName} />
+          <Avatar name={User} />
           <div className="font-light pl-2 text-xm flex justify-center flex-col  ">
-            {authorName}.
+            {User}.
           </div>
           <div className="flex justify-center flex-col pl-2">
             <Circle />
           </div>
 
           <div className="pl-2  text-slate-500 text-sm flex justify-center flex-col">
-            {publishedDate.slice(0, 10)}
+            {CreatedAt.slice(0, 10)}
           </div>
         </div>
         <div className="font-semibold text-xl pt-2">{title}</div>

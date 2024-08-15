@@ -32,6 +32,7 @@ export const Publish = () => {
                   Authorization:"Bearer "+localStorage.getItem("token"),
                 }
               });
+              console.log(response)
               navigate(`/blog/${response.data.id}`)
             }}
             type="submit"

@@ -25,6 +25,7 @@ export const updateBlogInput = z.object({
   content: z.string(),
   id: z.string(),
 });
+
 export const updateUserInput = z.object({
   name: z.string().optional(),
   email: z.string().email().optional(),

@@ -2,13 +2,11 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 export interface Blog{
-  "id":string,
+  "post_id":string,
   "content" :string,
   "title":string,
-  "author":{
-    "name":string,
-  },
-  "date":string,
+  "User":{name:string},
+  "createdAt":string,
 }
 export const useBlogs=()=>{
   const [loading,setLoading]=useState(true);
@@ -45,8 +43,8 @@ export const useBlog=({id}:{id:string})=>{
       setLoading(false);
     })
 
-  },[id])
-
+  },[])
+  console.log(blog)
   return {
     loading,blog
   }

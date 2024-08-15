@@ -5,6 +5,7 @@ import { useBlogs } from "../hooks";
 
 export const Blogs = () => {
   const { loading, blogs } = useBlogs();
+  console.log(blogs)
   if (loading) {
     return <Loading />;
   }
@@ -13,14 +14,14 @@ export const Blogs = () => {
       <Header />
       <div className="flex justify-center ">
         <div className=" ">
-          {blogs.map((blog) => (
+          {blogs.map( blog => (
             <BlogCard
-              key={blog.id}
-              id={blog.id}
-              authorName={blog.author.name || "Anonymous"}
+              key={blog.post_id}
+              post_id={blog.post_id}
+              User={blog.User?.name || "Anonymous"}
               title={blog.title}
               content={blog.content}
-              publishedDate={blog.date}
+              CreatedAt={blog.createdAt}
             />
           ))}
         </div>
