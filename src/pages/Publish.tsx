@@ -1,12 +1,14 @@
 import Header from "../components/Header";
 import axios from "axios";
-import { BACKEND_URL } from "../config";
+
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 export const Publish = () => {
   const [title,setTitle]=useState("");
   const [content,setContent]=useState("");
-  const navigate=useNavigate()
+  const navigate=useNavigate();
+  
   return (
     <div>
       <Header/>
@@ -25,7 +27,7 @@ export const Publish = () => {
           }}/>
           <button
             onClick={async () => {
-              const response=await axios.post(`${BACKEND_URL}/api/v1/blog`, {
+              const response=await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/blog`, {
                 title,content
               },{
                 headers:{

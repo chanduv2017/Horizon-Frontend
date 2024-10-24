@@ -1,30 +1,73 @@
-# React + TypeScript + Vite
+# Horizon Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Horizon Frontend is a modern web application developed with React and TypeScript, aimed at delivering a dynamic and responsive user experience. This project leverages Vite as a build tool, ensuring fast development and efficient production builds.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Profile Management**: Create and update user profiles with ease.
+- **Blog Writing & Editing**: Write, edit, and publish your own blogs effortlessly.
+- **Follow/Unfollow Bloggers**: Stay connected by following your favorite bloggers and unfollowing them when needed.
+- **Blog Interaction**: Save other blogs for later reading and leave comments on posts to engage with the community.
 
-## Expanding the ESLint configuration
+## 📚 Setup Project Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the Repository:**
 
-- Configure the top-level `parserOptions` property like this:
+   clone it using Git:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+   ```bash
+   git clone https://github.com/chanduv2017/Horizon-Frontend
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Navigate to the Repository:**
+
+   Change your directory to the cloned repository:
+
+   ```bash
+   cd Horizon-Frontend
+   ```
+
+3. **Install Necessary Modules:**
+
+   Install the required npm packages:
+
+   ```bash
+   npm install
+   ```
+
+4. **Available Scripts:**
+
+   You can run the following scripts using npm:
+
+   ```bash
+   "dev": "vite",                   # Starts the development server
+   "build": "tsc -b && vite build", # Builds the project
+   "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0", # Lints the code
+   "preview": "vite preview"        # Previews the built project
+   ```
+
+Make sure you have Node.js and npm installed on your machine before running these commands!
+
+## Endpoints:
+  **user routes:**
+- **POST /signup:** Sign up a new user.
+- **POST /signin:** Create a new task.
+- **GET / :** get user info.
+- **PUT / :** update user info.
+- **GET /follow :** follow/unfollow user.
+- **GET /followers :** get all followers list.
+- **GET /following :** get all following users list.
+- **GET /savedposts :** get all saved posts.
+
+**blog routes:**
+- **POST / :** create new blog.
+- **PUT / :** update blog.
+- **GET /bulk :** get all blogs.
+- **GET /:id :** get blog by id.
+
+## Database Schema:
+
+![schema](https://github.com/chanduv2017/Horizon-Frontend/blob/0cf527824fbf05708714e12a9c2a38fd181eab77/Schema.png)
+
+## 🤝 Contributing 
+Feel free to contribute by forking the repository and make a pull request.
